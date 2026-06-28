@@ -1,0 +1,29 @@
+diff --git a/data/collect_data.py b/data/collect_data.py
+index a7f8b8e..b6c31a7 100644
+--- a/data/collect_data.py
++++ b/data/collect_data.py
+@@ -404,9 +404,9 @@ def fetch_google_places(lat: float, lon: float,
+         }
+ 
+         try:
+-            with _google_api_lock:
+-                current_key = get_current_google_key()
+-                google_api_call_count += 1
++            current_key = get_current_google_key()
++            with _google_api_lock:
++                google_api_call_count += 1
+             
+             if not current_key:
+                 break
+@@ -418,9 +418,8 @@ def fetch_google_places(lat: float, lon: float,
+                 # -- Quota exhausted for this key -- try rotating ---------
+                 err = response.json().get('error', {})
+                 print(f"  Google Places QUOTA EXCEEDED: {err.get('message', '')[:80]}")
+-                with _google_api_lock:
+-                    rotated = rotate_google_key()
+-                    current_key = get_current_google_key()
++                rotated = rotate_google_key()
++                current_key = get_current_google_key()
+                 if rotated and current_key:
+                     # Retry the same batch with the new key
+                     with _google_api_lock:

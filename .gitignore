@@ -1,0 +1,25 @@
+.env
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Cache
+cache/
+
+# Model artifacts
+*.npy
+*.pkl
+*.joblib
+*.keras
+*.json
+
+# Build artifacts
+dist/
+node_modules/
+
+# Generated reports
+model_evaluation_report.*
+
+# Agent workspaces
+AntiGravity/
