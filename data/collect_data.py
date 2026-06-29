@@ -262,6 +262,7 @@ def fetch_osm_features(lat: float, lon: float,
     ox.settings.cache_folder = CACHE_DIR
     ox.settings.log_console = False
     ox.settings.timeout = 15              # 15-second Overpass timeout
+    ox.settings.requests_timeout = 10     # 10-second HTTP requests timeout (prevents 180s hangs)
     ox.settings.overpass_rate_limit = False # Let our code handle retries and backoff
 
     # -- Tags to fetch -- mirrors every feature that reads OSM data -------
@@ -538,6 +539,7 @@ def fetch_network_metrics(lat: float, lon: float,
         for attempt in range(max_retries):
             rotate_overpass_endpoint()
             ox.settings.timeout = 15
+            ox.settings.requests_timeout = 10
             try:
                 G = ox.graph_from_point(
                     (lat, lon),
