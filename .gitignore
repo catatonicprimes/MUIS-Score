@@ -13,6 +13,8 @@ cache/
 *.joblib
 *.keras
 *.json
+!model/*.json
+!model/*.pkl
 !package.json
 !package-lock.json
 

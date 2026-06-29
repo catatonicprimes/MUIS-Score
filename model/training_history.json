@@ -1,0 +1,25 @@
+{
+  "test_mae": 0.7766009569168091,
+  "test_rmse": 1.2939610481262207,
+  "test_r2": 0.6898042887901498,
+  "ensemble_weight_ann": 0.02,
+  "best_params": {
+    "n_layers": 2,
+    "n_units_l0": 42,
+    "n_units_l1": 63,
+    "dropout_rate": 0.14765588949362793,
+    "lr": 0.004116713780146089,
+    "weight_decay": 0.0007844236862956789,
+    "activation_fn": "relu",
+    "batch_size": 32
+  },
+  "best_params_xgb": {
+    "max_depth": 5,
+    "n_estimators": 178,
+    "learning_rate": 0.16796720256071812,
+    "subsample": 0.9702205985643919,
+    "colsample_bytree": 0.7210378421905315,
+    "reg_alpha": 0.0043605393541654245,
+    "reg_lambda": 0.004316704268184467
+  }
+}
