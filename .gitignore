@@ -13,6 +13,8 @@ cache/
 *.joblib
 *.keras
 *.json
+!package.json
+!package-lock.json
 
 # Build artifacts
 dist/
